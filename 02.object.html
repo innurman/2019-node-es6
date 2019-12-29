@@ -1,0 +1,88 @@
+<script>
+ // 함수 선언
+ function a(a, b) {
+  return a+b;
+ }
+ //a();
+ console.log(a);
+ console.log(a(10,20));
+
+ // 함수 표현
+ const b = function(a1, b1) {
+     return a1 + b1;
+ }
+ console.log(b);
+ console.log(b(10,20));
+
+
+ // 즉시실행함수
+ //var obj = ()(); // IIFE
+ var obj = (
+     function() {
+         console.log(10, 20);
+     }
+ )();
+
+ // ES5 객체
+ const Obj2 = (function(){
+    // ES5
+    function Obj2() {
+        // Constructor
+        this.a = 10;
+        this.b = 20;
+    }
+    Obj2.prototype.sum = function(){
+        // Method
+        return this.a + this.b;
+    }
+    return Obj2;
+ })();
+ const obj3 = new Obj2();
+
+ // ES6 문법
+ class Human {
+     constructor(name, age) {
+        this.name = name;
+        this.age = age;
+     } 
+
+     showInfo() {
+         //return this.name + "은(는)" + this.age + "세 입니다";
+         // ``
+         return `${this.name}은(는) ${this.age}세 입니다`;
+     }
+     
+ }
+ const user = new Humax("홍길동", 30);
+ //user.showInfo();
+ console.log(user.showInfo());
+
+ // ES6 함수 표현식
+ const fn = function(a) {
+    console.log(this);
+ }
+
+ const fn2 = (a) => {
+     console.log(this);
+    return a+10;
+ }
+
+ fn();
+ fn2();
+
+
+ const fn3 = a => a + 10;
+ console.log(fn3(30));
+
+ const obj4 = {
+     name: "홍길동",
+     age: 29,
+ }
+ console.log(Object.keys(obj4));
+ console.log(Object.values(obj4));
+ for(let [key, value] of Object.entries(obj4)) {
+     console.log(`${key}: ${value}`);
+ }
+
+
+</script>

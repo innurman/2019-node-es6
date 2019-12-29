@@ -2,4 +2,72 @@
 
     var a = 10;
 
+    function sum() {
+        var a = 20;
+    }
+    let c = 20;
+    const b = 30;
+    for(var i=0; i<10; i++) {
+
+    }
+    console.log(i);
+    
+    for(let j=0; i<10; i++) {
+        
+    }
+    console.log(j);
+    
+    let = d;
+    d = 20;
+    const e = new Array();  
+    // primitive type
+    // reference type
+    e[0] = 10;
+    e[1] = 20;  
+
+    // map()
+    // filter()
+    const arr1 = [1,2,3,4,5];
+    //const arr2 = arr1;
+
+    //const arr2 = arr1.map();
+    const arr2 = arr1.map(function(item){
+        return item*2;
+    });
+    console.log(arr1, arr2);
+
+    const arr3 = [
+        {name: "hong", age: 25},
+        {name: "hong2", age: 35},
+        {name: "hong3", age: 45},
+        {name: "hong4", age: 55},
+        {name: "hong5", age: 65},
+    ];
+
+    const arr4 = arr3.filter(function(item){
+        // item.age <30 ? item
+        if(item.age <30) return item;
+    });
+    console.log(arr3)
+    console.log(arr4)
+
+
+    for(let i=0; i<arr1.length; i++) {
+
+    }
+
+    for(let i in arr1) {
+        console.log(arr1[i])
+    }
+
+    for(let v of arr1) {
+        console.log(v);
+    }
+
+    console.clear();
+    // 비동기 콜백
+    arr1.forEach(function(v, i){
+        console.log(v, i);
+    })
+
 </script>
